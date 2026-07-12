@@ -15,7 +15,7 @@ function Projects() {
     },
     {
       title: "CleanGermany",
-      image: "assets/project2.PNG",
+      image: "assets/cleangermany.PNG",
       tag: "HTML5 • CSS3 • JavaScript",
       desc: "Responsive landing page for a cleaning service business with interactive animations.",
       live: "https://cleangermany-website-2zb2.vercel.app",
@@ -31,7 +31,7 @@ function Projects() {
     },
     {
       title: "Portfolio Website",
-      image: "/assets/project4.PNG",
+      image: "/assets/portfolio.PNG",
       tag: "React JS",
       desc: "This site — a responsive single-page portfolio built with React and Tailwind CSS.",
       live: "https://portfolio-snowy-gamma-hkrkoo9vum.vercel.app",
