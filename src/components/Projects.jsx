@@ -5,10 +5,38 @@ function Projects() {
   const sectionRef = useRef(null);
 
   const projects = [
-    { title: "Expense Tracker", image: "assets/project1.PNG", tag: "Full Stack" },
-    { title: "Ecommerce Store", image: "assets/project2.PNG", tag: "React JS" },
-    { title: "Figma Website", image: "assets/project3.PNG", tag: "Figma UI/UX" },
-    { title: "Portfolio Website", image: "/assets/project4.PNG", tag: "React JS" },
+    {
+      title: "Expense Tracker",
+      image: "assets/project1.PNG",
+      tag: "React JS • Supabase",
+      desc: "Full-featured personal finance dashboard with goals and multi-currency support.",
+      live: "https://expense-tracker-wokx.vercel.app",
+      github: "https://github.com/emanilyas/expense-tracker",
+    },
+    {
+      title: "CleanGermany",
+      image: "assets/project2.PNG",
+      tag: "HTML5 • CSS3 • JavaScript",
+      desc: "Responsive landing page for a cleaning service business with interactive animations.",
+      live: "https://cleangermany-website-2zb2.vercel.app",
+      github: "https://github.com/emanilyas/cleangermany-website",
+    },
+    {
+      title: "PackRight",
+      image: "assets/project3.PNG",
+      tag: "React JS • Supabase",
+      desc: "Business website with full admin panel for a Bahrain-based packaging company client.",
+      live: null,
+      github: null,
+    },
+    {
+      title: "Portfolio Website",
+      image: "/assets/project4.PNG",
+      tag: "React JS",
+      desc: "This site — a responsive single-page portfolio built with React and Tailwind CSS.",
+      live: "https://portfolio-snowy-gamma-hkrkoo9vum.vercel.app",
+      github: "https://github.com/emanilyas/portfolio",
+    },
   ];
 
   useEffect(() => {
@@ -67,9 +95,35 @@ function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm leading-6">
-                  Modern responsive website using React JS and Tailwind CSS.
+                <p className="text-gray-400 text-sm leading-6 mb-4">
+                  {project.desc}
                 </p>
+
+                <div className="flex gap-3">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-purple-300 border border-purple-500/40 hover:border-purple-400 hover:bg-purple-500/10 px-3 py-2 rounded-lg transition-all duration-300"
+                    >
+                      Live Site
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-gray-300 border border-white/20 hover:border-white/40 hover:bg-white/5 px-3 py-2 rounded-lg transition-all duration-300"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {!project.live && !project.github && (
+                    <span className="text-xs text-gray-500 italic">Private client project</span>
+                  )}
+                </div>
               </div>
             </div>
           ))}

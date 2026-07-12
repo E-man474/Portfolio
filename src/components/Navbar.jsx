@@ -28,9 +28,14 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
 
         {/* Logo */}
-        <h1 className="text-3xl font-bold tracking-tight">
-          Code<span className="text-purple-500">ByEman</span>
-        </h1>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-500 flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-purple-900/40">
+            EI
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight hidden sm:block">
+            Code<span className="text-purple-500">ByEman</span>
+          </h1>
+        </div>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-10 text-gray-300 font-medium">

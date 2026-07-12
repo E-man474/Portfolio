@@ -6,12 +6,12 @@ function Skills() {
   const sectionRef = useRef(null);
 
   const skills = [
-    { name: "HTML5", level: 100, icon: "🌐" },
-    { name: "CSS3", level: 95, icon: "🎨" },
-    { name: "JavaScript (ES6+)", level: 85, icon: "⚡" },
-    { name: "React JS", level: 92, icon: "⚛️" },
-    { name: "Tailwind CSS", level: 95, icon: "💨" },
-    { name: "Supabase", level: 80, icon: "🗄️" },
+    { name: "HTML5", level: 5, icon: "🌐" },
+    { name: "CSS3", level: 5, icon: "🎨" },
+    { name: "JavaScript (ES6+)", level: 4, icon: "⚡" },
+    { name: "React JS", level: 4, icon: "⚛️" },
+    { name: "Tailwind CSS", level: 5, icon: "💨" },
+    { name: "Supabase", level: 4, icon: "🗄️" },
   ];
 
   useEffect(() => {
@@ -68,20 +68,23 @@ function Skills() {
                     {skill.name}
                   </span>
                 </h3>
-                <span className="text-purple-400 font-bold text-lg">
-                  {skill.level}%
-                </span>
               </div>
 
-              {/* Progress Bar Track */}
-              <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-purple-600 to-pink-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: animated ? `${skill.level}%` : "0%",
-                    transitionDelay: `${index * 100}ms`,
-                  }}
-                ></div>
+              {/* Proficiency Dots */}
+              <div className="flex gap-2">
+                {[1, 2, 3, 4, 5].map((dot) => (
+                  <span
+                    key={dot}
+                    className={`h-2.5 flex-1 rounded-full transition-all duration-700 ${
+                      animated
+                        ? dot <= skill.level
+                          ? "bg-gradient-to-r from-purple-600 to-pink-500"
+                          : "bg-gray-800"
+                        : "bg-gray-800"
+                    }`}
+                    style={{ transitionDelay: `${index * 100 + dot * 60}ms` }}
+                  ></span>
+                ))}
               </div>
             </div>
           ))}

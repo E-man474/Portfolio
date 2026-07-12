@@ -39,8 +39,8 @@ function Contact() {
     {
       icon: "💼",
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/eman-ilyas-56166440b",
-      display: "linkedin.com/in/eman-ilyas-56166440b",
+      href: "https://www.linkedin.com/in/eman-ilyas-48b907294",
+      display: "linkedin.com/in/eman-ilyas-48b907294",
       external: true,
     },
   ];

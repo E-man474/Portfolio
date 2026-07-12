@@ -38,16 +38,16 @@ function About() {
           </p>
 
           <p className="text-gray-400 leading-9 mb-5">
-            With{" "}
-            <span className="text-purple-400 font-semibold">3+ years</span> of
-            hands-on experience on Upwork, I've built everything from
-            e-commerce stores and real estate apps to restaurant booking
-            systems — all with clean code, smooth UI, and happy clients
-            (5-star rated!).
+            With hands-on project experience{" "}
+            <span className="text-purple-400 font-semibold">since 2023</span>,
+            I've built full-stack applications, business websites, and admin
+            dashboards — including a live production website for a real
+            client — all with clean code, smooth UI, and reliable
+            functionality.
           </p>
 
           <p className="text-gray-400 leading-9">
-            Beyond freelancing, I teach Web Development at Dar Ul Ilm Higher
+            Beyond development, I teach Web Development at Dar Ul Ilm Higher
             Secondary School, where I help students go from zero to building
             their first websites. I love coding and I love sharing that love
             even more. ✨
@@ -75,7 +75,7 @@ function About() {
               <p className="text-purple-400 text-sm mt-1">
                 Dar Ul Ilm Higher Secondary School
               </p>
-              <p className="text-gray-500 text-sm">April 2024 – Present</p>
+              <p className="text-gray-500 text-sm">April 2025 – Present</p>
               <p className="text-gray-400 mt-2 text-sm leading-6">
                 Teaching HTML, CSS, JavaScript & responsive web design to
                 secondary-level students while managing school IT infrastructure.
@@ -84,13 +84,13 @@ function About() {
 
             <div className="border-l-2 border-pink-500 pl-6 group hover:pl-8 transition-all duration-300">
               <h3 className="text-xl font-semibold text-white group-hover:text-pink-300 transition-colors duration-300">
-                Freelance Web Developer
+                Freelance Web & Graphic Design
               </h3>
-              <p className="text-purple-400 text-sm mt-1">Upwork — Remote</p>
-              <p className="text-gray-500 text-sm">2022 – Present</p>
+              <p className="text-purple-400 text-sm mt-1">Upwork & Fiverr — Remote</p>
+              <p className="text-gray-500 text-sm">2023 – Present</p>
               <p className="text-gray-400 mt-2 text-sm leading-6">
-                Delivered 10+ client projects with 5-star ratings across
-                retail, hospitality, and real estate industries.
+                Delivered web development and graphic design projects for
+                freelance clients, from requirements to final delivery.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ function About() {
               <p className="text-purple-400 text-sm mt-1">
                 Government College University Faisalabad
               </p>
-              <p className="text-gray-500 text-sm">2021 – July 2025</p>
+              <p className="text-gray-500 text-sm">2021 – October 2025</p>
             </div>
 
           </div>
