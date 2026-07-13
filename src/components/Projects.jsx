@@ -23,7 +23,7 @@ function Projects() {
     },
     {
       title: "PackRight",
-      image: "assets/project3.PNG",
+      image: "assets/ClientProduct.PNG",
       tag: "React JS • Supabase",
       desc: "Business website with full admin panel for a Bahrain-based packaging company client.",
       live: null,
