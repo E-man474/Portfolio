@@ -11,7 +11,7 @@ function Projects() {
       tag: "React JS • Supabase",
       desc: "Full-featured personal finance dashboard with goals and multi-currency support.",
       live: "https://expense-tracker-wokx.vercel.app",
-      github: "https://github.com/emanilyas/expense-tracker",
+      github: "https://github.com/E-man474/Expense-Tracker",
     },
     {
       title: "CleanGermany",
@@ -19,13 +19,13 @@ function Projects() {
       tag: "HTML5 • CSS3 • JavaScript",
       desc: "Responsive landing page for a cleaning service business with interactive animations.",
       live: "https://cleangermany-website-2zb2.vercel.app",
-      github: "https://github.com/emanilyas/cleangermany-website",
+      github: "https://github.com/E-man474/cleangermany-website",
     },
     {
       title: "PackRight",
       image: "assets/ClientProduct.PNG",
       tag: "React JS • Supabase",
-      desc: "Business website with full admin panel for a Bahrain-based packaging company client.",
+      desc: "Business website with a full-featured admin panel, built for a private freelance client.",
       live: null,
       github: null,
     },
@@ -35,7 +35,7 @@ function Projects() {
       tag: "React JS",
       desc: "This site — a responsive single-page portfolio built with React and Tailwind CSS.",
       live: "https://portfolio-snowy-gamma-hkrkoo9vum.vercel.app",
-      github: "https://github.com/emanilyas/portfolio",
+      github: "https://github.com/E-man474/Portfolio",
     },
   ];
 
