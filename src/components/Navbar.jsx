@@ -13,7 +13,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["home", "about", "skills", "projects", "services", "contact"];
+  const navLinks = ["home", "about", "skills", "projects", "experience", "contact"];
 
   const handleLinkClick = () => setMenuOpen(false);
 

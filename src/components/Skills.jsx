@@ -1,95 +1,80 @@
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub, FaCode,
+} from "react-icons/fa";
+import { SiSupabase, SiTailwindcss, SiVercel } from "react-icons/si";
 
 function Skills() {
-  const [animated, setAnimated] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  const skills = [
-    { name: "HTML5", level: 5, icon: "🌐" },
-    { name: "CSS3", level: 5, icon: "🎨" },
-    { name: "JavaScript (ES6+)", level: 4, icon: "⚡" },
-    { name: "React JS", level: 4, icon: "⚛️" },
-    { name: "Tailwind CSS", level: 5, icon: "💨" },
-    { name: "Supabase", level: 4, icon: "🗄️" },
+  const categories = [
+    {
+      title: "Frontend",
+      accent: "border-purple-500 text-purple-400",
+      iconColor: "text-purple-400",
+      skills: [
+        { name: "HTML5", Icon: FaHtml5 },
+        { name: "CSS3", Icon: FaCss3Alt },
+        { name: "JavaScript", Icon: FaJs },
+        { name: "React.js", Icon: FaReact },
+        { name: "Tailwind CSS", Icon: SiTailwindcss },
+      ],
+    },
+    {
+      title: "Database",
+      accent: "border-pink-500 text-pink-400",
+      iconColor: "text-pink-400",
+      skills: [{ name: "Supabase", Icon: SiSupabase }],
+    },
+    {
+      title: "Tools",
+      accent: "border-gray-500 text-gray-300",
+      iconColor: "text-gray-300",
+      skills: [
+        { name: "Git", Icon: FaGitAlt },
+        { name: "GitHub", Icon: FaGithub },
+        { name: "Vercel", Icon: SiVercel },
+        { name: "VS Code", Icon: FaCode },
+      ],
+    },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          setTimeout(() => setAnimated(true), 300);
-        }
-      },
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" className="py-28 px-6" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto">
-
-        <h2
-          className={`text-5xl font-bold mb-4 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+    <section id="skills" className="py-28 px-6">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-5xl font-bold mb-14"
         >
-          My Skills &{" "}
-          <span className="text-purple-500">Expertise</span>
-        </h2>
+          My Skills & <span className="text-purple-500">Expertise</span>
+        </motion.h2>
 
-        <p
-          className={`text-gray-400 mb-14 text-lg transition-all duration-700 delay-100 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          Technologies I work with every day to build modern web apps.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className={`bg-[#111827] border border-white/10 p-8 rounded-3xl
-                hover:border-purple-500/60 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20
-                transition-all duration-500 group
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: `${index * 80}ms` }}
+        <div className="grid md:grid-cols-3 gap-8">
+          {categories.map((cat, catIndex) => (
+            <motion.div
+              key={cat.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="bg-[#111827] border border-white/10 rounded-3xl p-8 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300"
             >
-              <div className="flex justify-between mb-4 items-center">
-                <h3 className="text-xl font-semibold flex items-center gap-3">
-                  <span className="group-hover:scale-125 inline-block transition-transform duration-300">
-                    {skill.icon}
-                  </span>
-                  <span className="group-hover:text-purple-300 transition-colors duration-300">
-                    {skill.name}
-                  </span>
-                </h3>
-              </div>
-
-              {/* Proficiency Dots */}
-              <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((dot) => (
-                  <span
-                    key={dot}
-                    className={`h-2.5 flex-1 rounded-full transition-all duration-700 ${
-                      animated
-                        ? dot <= skill.level
-                          ? "bg-gradient-to-r from-purple-600 to-pink-500"
-                          : "bg-gray-800"
-                        : "bg-gray-800"
-                    }`}
-                    style={{ transitionDelay: `${index * 100 + dot * 60}ms` }}
-                  ></span>
+              <h3 className={`text-lg font-bold mb-6 pb-3 border-b-2 ${cat.accent}`}>
+                {cat.title}
+              </h3>
+              <ul className="space-y-4">
+                {cat.skills.map(({ name, Icon }) => (
+                  <li key={name} className="flex items-center gap-3 text-gray-300 font-medium">
+                    <Icon className={`text-xl ${cat.iconColor}`} />
+                    {name}
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
